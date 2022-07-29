@@ -1,9 +1,9 @@
-port: "8000"
+port: "8081"
 
-#db:
-#  host: "localhost"
-#  username: "postgres"
-#  password: "querty"
-#  port: "5432"
-#  dbname: "postgres"
-#  sslmode: "disable"
+db:
+  host: "localhost"
+  username: "postgres"
+  password: "passwd"
+  port: "5432"
+  dbname: "postgres"
+  sslmode: "disable"
