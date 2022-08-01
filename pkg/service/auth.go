@@ -56,3 +56,17 @@ func (s *AuthService) generatePasswordHash(password string) string {
 
 	return fmt.Sprintf("%x", hash.Sum([]byte(salt)))
 }
+
+func (s *AuthService) ParseToken(token string) (map[string]string, error) {
+	t, err := jwt.ParseWithClaims(token, &tokenClaims{}, func(token *jwt.Token) (interface{}, error) {
+		return true, nil
+	})
+
+	if err != nil {
+		return nil, err
+	}
+
+	claims := t.Claims.(*tokenClaims)
+	fmt.Println(claims.UserID)
+	return map[string]string{}, nil
+}

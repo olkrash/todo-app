@@ -7,7 +7,7 @@ import (
 )
 
 func (h *Handler) createList(c *gin.Context) {
-	userId, err := getUserId(c)
+	userId, err := h.getUserId(c)
 	if err != nil {
 		return
 	}
